@@ -1,0 +1,32 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: core-service
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: create
+    generate-ddl: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key:
+            location: classpath:public.pem
+    jwt:
+      private-key-path: classpath:private.pem
+
+server:
+  port: 9020
+grpc:
+  client:
+    rust-pin-service:
+      address: discovery:///rust-pin-service
+      negotiationType: plaintext

@@ -1,0 +1,29 @@
+[package]
+name = "rust-pin-service"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rand = "0.8"
+aes-gcm = "0.10"         
+aes = "0.8"              
+base64 = "0.21"          
+hex = "0.4"
+tonic = "0.11"
+prost = "0.12"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+prost-types = "0.12"
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+uuid = { version = "1.7", features = ["v4"] }
+mongodb = "2.8"
+bson = { version = "2", features = ["chrono-0_4"] }
+futures = "0.3"
+chrono = "0.4"
+bytes = "1.5"
+
+[build-dependencies]
+tonic-build = "0.11"

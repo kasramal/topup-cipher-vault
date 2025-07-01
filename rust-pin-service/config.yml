@@ -1,0 +1,26 @@
+app_name: rust-pin-service
+
+cipher:
+  key: 01234567012345670123456701234567
+  alg: aes256
+  alg_str: Aes256Gcm
+
+grpc:
+  port: 9099
+
+registry:
+  hostname: localhost
+  ip_address: 127.0.0.1
+  port: 8761
+  retry_attempts: 10
+  data_center_info_name: MyOwn
+
+datasource:
+  hostname: localhost
+  port: 27017
+  username: null
+  password: null
+  database_name: pin-vault
+  min_pool_size: 10
+  max_pool_size: 50
+  max_idle_time: 300

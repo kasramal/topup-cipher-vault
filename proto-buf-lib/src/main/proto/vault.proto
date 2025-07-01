@@ -1,0 +1,48 @@
+// user.proto
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package vault;
+
+option java_package = "com.demohouse.topup.grpc.vault";
+option java_multiple_files = true;
+
+service PinCodeVaultService {
+  rpc UploadPinCodes(stream PinCodeChunk) returns (StatusResponse);
+  rpc GeneratePinCode(GenerationRequest) returns (StatusResponse);
+  rpc GetPinCode(IdRequest) returns (PinCodeResponse);
+  rpc ReservePinCode(google.protobuf.Empty) returns (ReservationResponse);
+  rpc TakePinCode(IdRequest) returns (PinCodeResponse);
+}
+
+message PinCodeChunk {
+  bytes content = 1;
+  string file_name = 2;
+}
+
+message IdRequest {
+  string id = 1;
+}
+
+message GenerationRequest {
+  int32 count = 1;
+}
+
+message StatusResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message PinCodeResponse {
+  bool success = 1;
+  string message = 2;
+  string id = 3;
+  string pin_code = 4;
+}
+
+message ReservationResponse {
+  bool success = 1;
+  string message = 2;
+  string id = 3;
+}
