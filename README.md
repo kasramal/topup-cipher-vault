@@ -1,7 +1,5 @@
 # topup-cipher-vault
 
----
-
 # 🛰️ Rust + Java Microservice Architecture
 
 This project is a hybrid microservices system combining Java Spring Boot services with a Rust gRPC server. It uses Eureka for service discovery and a Spring Cloud Gateway for routing. 
