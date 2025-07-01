@@ -18,14 +18,14 @@ The Rust service performs secure, high-performance tasks (like PIN code encrypti
 - The **Rust Service** handles core business logic related to pin code storage and management, interacting with **MongoDB** for persistent data storage.
 
 ```
-             [ Client ] --> [ Spring Boot (Java) + Gateway + Eureka ]
-                                      |
-                                      | gRPC
-                                      v
-                      [ Rust Service (gRPC server) ]
-                                      |
-                                      v
-                              [ MongoDB Database ]
+                   [ Client ] --> [ Spring Boot (Java) + Gateway + Eureka ]
+                                            |
+                                            | gRPC
+                                            v
+                            [ Rust Service (gRPC server) ]
+                                            |
+                                            v
+                                    [ MongoDB Database ]
 ```
 ---
 # ⚙️ Tech Stack
